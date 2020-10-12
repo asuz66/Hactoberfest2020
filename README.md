@@ -1,6 +1,5 @@
 # Hacktoberfest
-The purpose of this repo are:
-To get beginners familiarised with git, github and the concept of commits and pull requests (via the incentive of hacktoberfest).
+The purpose of this repo is to get beginners familiarised with git, github and the concept of commits and pull requests (via the incentive of hacktoberfest).
 
 
 *Please submit a pull request only if you're a student of GCEK. Other pull requests will not be accepted.*
@@ -9,7 +8,7 @@ To get beginners familiarised with git, github and the concept of commits and pu
 1. Fork this repo
 2. Add a new .md (markdown) file with your name, year of joining and branch. 
 3. Type in a program you found interesting. Remember to [format it](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting) properly. Commit the changes.
-4. Open a pull request to [FOSS-GCEK/Hacktoberfest](https://github.com/FOSS-GCEK/Hacktoberfest/pulls)
+4. Open a pull request to [azus2000/Hactoberfest2020](https://github.com/azus2000/Hactoberfest2020/pulls)
 5. Congrats - you just created your first pull request!
 
 You also navigated the intricate process of figuring out how to do this all by yourself. Kudos to you!
