@@ -1,8 +1,7 @@
 # Hacktoberfest
-The purpose of this repo is three-fold:
-1. To get beginners familiarised with git, github and the concept of commits and pull requests (via the incentive of hacktoberfest).
-2. To create a database of basic and interesting programs that beginners can take a look at. 
-3. To create a list of FOSS enthusiasts of GCEK
+The purpose of this repo are:
+To get beginners familiarised with git, github and the concept of commits and pull requests (via the incentive of hacktoberfest).
+
 
 *Please submit a pull request only if you're a student of GCEK. Other pull requests will not be accepted.*
 
