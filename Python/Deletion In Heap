@@ -1,0 +1,101 @@
+'''
+define class MaxHeap. Constructor recieves a list of items to insert into the heap. 
+We'll start by creating a new list called heap and placing the value 0 in it 
+which is going to at index 0 so we are not going to use that position
+And then we have for loop to insert all the items that were passed in if any which
+we append to the list one at a time and we append them; we will move them up to their
+proper position
+'''
+
+class MaxHeap:
+    def __init__(self,items=[]):
+       self.heap=[0] #we have first element zero because we want our starting index of heap to be 1
+       for i in items:
+           self.heap.append(i)
+           self.HeapifyUp(len(self.heap)-1)
+       
+    def parent(self,index):  #returns index of parent
+        return (index)//2
+    
+    def leftchild(self,index):   #returns index of left child
+        return (2*index)
+    
+    def rightchild(self,index): #returns index of right child
+        return (2*index)+1
+   
+    def swap(self,i,j): #this simply swaps the values
+        self.heap[i], self.heap[j]=self.heap[j], self.heap[i]
+        
+        ''' HeapifyUp assumes that we have inserted value at the end
+            of the heap or at the end of the list and move it up to the proper
+            position. Now it has two possibilities. First possibility is the index that 
+            we have passed its the index 1 in which there is no requirement of bubble
+            it up. Other possibility is that we have to move the value up. We will 
+            start with finding the index of parent. Then we will check if the index
+            we passed is the 1 then we won't return anything.
+            If its greater than 1 then we will compare it and swap the values which will 
+            be recursive until value reaches its proper position'''
+            
+        
+    def HeapifyUp(self,index):
+        parentindex=self.parent(index)
+        if index<=1:
+            return
+        elif self.heap[index]>self.heap[parentindex]:
+            self.swap(index,parentindex)
+            self.HeapifyUp(parentindex) #recurssion
+            
+            '''Let's define our delete function. 
+           There are 3 possibilities for the delete function.
+           First possibility that there are 2 or 3 values in the heap
+           in which we will move move max value to the end of the heap before pop it off
+           then we want to move down the value that we swapped to the top position
+           The second possibility is that there is only one value in the heap.
+           In this case we can simply pop the top value from the heap then we will have 
+           empty heap after that.
+           The third possibility is that there is no element in the heap. In this case we
+           will just return False.'''
+           
+    def delete(self):
+        if len(self.heap)>2: #first case
+            self.swap(1,len(self.heap)-1) #swapping fist and last value of the heap
+            maximum=self.heap.pop() #deleted the max value from the heap as its on top
+            self.bubbledown(1) #then we move down the last element which was swapped to its correct position
+            
+        elif len(self.heap)==2: #second case
+            maximum=self.heap.pop()
+            
+        else: #thirdcase
+            maximum=False
+        
+        return maximum
+    
+        '''Bubbledown is sometimes called max-heapify. Inserted the value at top of 
+            the heap. Now want to place it at the correct position maintaining max-heap
+            property. We will start with defining the index of left and right child of
+            the index we want to move down. Then we will compare our index value to the
+            left child and right child to get the largest. LARGEST HERE IS THE INDEX NOT
+            VALUE. if largest is same as index then no swapping but if it is not then we
+            will swap the places. This will also be the recursive function.'''
+            
+    def bubbledown(self,index):
+        leftchild= self.leftchild(index)
+        rightchild= self.rightchild(index)
+        largest=index
+        if len(self.heap)>leftchild and self.heap[largest]<self.heap[leftchild]:
+            largest=leftchild
+        if len(self.heap)>rightchild and self.heap[largest]<self.heap[rightchild]:
+            largest=rightchild
+        if largest!=index:
+            self.swap(index,largest)
+            self.bubbledown(largest) #recursion
+            
+    def printheap(self):
+        print(self.heap[1:len(self.heap)])
+        
+myheap=MaxHeap([10,20,30])
+print(myheap.delete())
+myheap.printheap()
+
+
+
